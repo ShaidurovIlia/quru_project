@@ -25,6 +25,7 @@ public class JunitSimpleTest {
 
 //OR !! Если нужно использовать данные большого объема @CsvFileSource
     /*@CsvFileSource(resources = "/testData.csv")*/
+
     @ParameterizedTest(name = "Адрес {1} должен быть в выдаче гугла по запросу {0}")
     @Tags({@Tag("BLOKER"), @Tag("UI_TEST")})
     void productSiteUrlShouldBePresentResultsOfSearchInGoogleByProductNameQuery(
