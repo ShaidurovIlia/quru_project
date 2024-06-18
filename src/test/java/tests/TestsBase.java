@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeAll;
 import pages.RegistrationPage;
 
 public class TestsBase {
-    RegistrationPage registrationPage = new RegistrationPage();
+    protected RegistrationPage registrationPage = new RegistrationPage();
 
     @BeforeAll
     static void beforeAll() {
