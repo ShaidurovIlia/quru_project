@@ -7,6 +7,7 @@ import pages.components.RegistrationResultsModal;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static io.qameta.allure.Allure.step;
 
 public class RegistrationPage {
 
@@ -33,8 +34,12 @@ public class RegistrationPage {
 
 
     public RegistrationPage openPage() {
-        open("/automation-practice-form");
-        $(".practice-form-wrapper").shouldHave(text(TITLE_PAGE));
+        step("Открывваем форму", () -> {
+            open("/automation-practice-form");
+        });
+        step("Проверяем что открыта нужная форма", () -> {
+            $(".practice-form-wrapper").shouldHave(text(TITLE_PAGE));
+        });
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;

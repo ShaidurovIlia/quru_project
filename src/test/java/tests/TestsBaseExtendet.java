@@ -1,18 +1,20 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.RegistrationPage;
 
-import java.net.MalformedURLException;
 import java.util.Map;
 
 public class TestsBaseExtendet {
     protected RegistrationPage registrationPage = new RegistrationPage();
 
     @BeforeAll
-    static void beforeAll() throws MalformedURLException {
+    static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browser = "chrome";
         Configuration.browserVersion = "120.0";
@@ -26,5 +28,10 @@ public class TestsBaseExtendet {
         ));
 
         Configuration.browserCapabilities = capabilities;
+    }
+
+    @BeforeEach
+    void addListener() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 }
