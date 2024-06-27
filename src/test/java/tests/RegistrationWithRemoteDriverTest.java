@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-
+@Tag("remote")
 public class RegistrationWithRemoteDriverTest extends TestsBaseExtendet {
-    @Tag("remote")
+
     @Test
     void successfulRegistration() {
 
