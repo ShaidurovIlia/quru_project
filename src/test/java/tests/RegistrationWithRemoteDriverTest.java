@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -51,6 +52,33 @@ public class RegistrationWithRemoteDriverTest extends TestsBaseExtendet {
                 .verifyResult("Picture", img)
                 .verifyResult("Address", address)
                 .verifyResult("State and City", state + " " + city);
+
+    }
+
+    @Test
+    void simple1() {
+        Assertions.assertTrue(2 > 1);
+    }
+
+    @Test
+    void simple2() {
+        Assertions.assertTrue(2 > 1);
+    }
+
+    @Test
+    void simple3() {
+        Assertions.assertTrue(2 > 1);
+    }
+
+    @Test
+    void simple4() {
+        Assertions.assertFalse(2 > 1);
+
+    }
+
+    @Test
+    void simple5() {
+        Assertions.assertFalse(1 > 2);
 
     }
 }
